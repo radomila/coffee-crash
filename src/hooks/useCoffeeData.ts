@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
-import type { CoffeeProps, CoffeeTypeProps } from '../types.ts';
+import type { CoffeeProps } from '../types.ts';
 
-export function useCoffeeData({ coffeeTypeParam }: CoffeeTypeProps) {
+export function useCoffeeData() {
   const [coffeeData, setCoffeeData] = useState<CoffeeProps[] | null>([]);
   const [error, setError] = useState<object>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -11,14 +11,12 @@ export function useCoffeeData({ coffeeTypeParam }: CoffeeTypeProps) {
 
   useEffect(() => {
     getCoffeeData();
-  }, [coffeeTypeParam]);
+  }, []);
 
   async function getCoffeeData() {
     setLoading(true);
     try {
-      const res = await axios.get(
-        `${apiUrl}/${coffeeTypeParam}`,
-      );
+      const res = await axios.get(apiUrl);
       setCoffeeData(res.data);
     } catch (err) {
       if (err instanceof AxiosError) {

@@ -1,10 +1,9 @@
 export interface CoffeeProps {
-    title: string;
-    description: string;
-    image: string;
-    id: number;
-}
-
-export interface CoffeeTypeProps {
-    coffeeTypeParam: 'hot' | 'iced';
+  id: number;
+  image: string;
+  name: string;
+  popular: boolean;
+  price: string;
+  rating: number;
+  votes: number;
 }

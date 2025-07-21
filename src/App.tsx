@@ -1,11 +1,10 @@
-import { Router } from './Router.tsx';
-import { BrowserRouter } from 'react-router-dom';
+import { CardList } from './components/CardList.tsx';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <CardList />
+    </div>
   );
 }
 
