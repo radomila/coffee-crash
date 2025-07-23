@@ -8,3 +8,10 @@ export interface CoffeeProps {
   votes: number;
   available: boolean;
 }
+
+export type ActiveButtonType = 'all' | 'available';
+
+export interface ActiveButtonContextType {
+  activeButton: ActiveButtonType;
+  setActiveButton: (button: ActiveButtonType) => void;
+}

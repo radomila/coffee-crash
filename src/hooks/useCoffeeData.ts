@@ -17,7 +17,6 @@ export function useCoffeeData() {
     setLoading(true);
     try {
       const res = await axios.get(apiUrl);
-      console.log(res.data);
       setCoffeeData(res.data);
     } catch (err) {
       if (err instanceof AxiosError) {
