@@ -6,7 +6,7 @@ export function CardList() {
   const { coffeeData } = useCoffeeData();
 
   return (
-    <div className="flex flex-wrap gap-7">
+    <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-7">
       {coffeeData && coffeeData.length > 0
         ? coffeeData?.map((coffee: CoffeeProps) => {
             return (

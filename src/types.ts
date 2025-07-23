@@ -6,4 +6,5 @@ export interface CoffeeProps {
   price: string;
   rating: number;
   votes: number;
+  available: boolean;
 }
