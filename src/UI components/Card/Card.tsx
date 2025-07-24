@@ -1,6 +1,6 @@
-import type { CoffeeProps } from '../types.ts';
-import starFill from '../images/Star_fill.svg';
-import star from '../images/Star.svg';
+import type { CoffeeProps } from '../../types.ts';
+import starFill from '../../assets/Star_fill.svg';
+import star from '../../assets/Star.svg';
 
 export function Card(coffee: CoffeeProps) {
   const { image, name, popular, price, rating, votes, available } = coffee;

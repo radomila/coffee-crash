@@ -1,5 +1,5 @@
 import { Button } from './Button.tsx';
-import { useActiveButton } from '../hooks/useActiveButton.ts';
+import { useActiveButton } from '../../hooks/useActiveButton.ts';
 
 export function ButtonList() {
   const { setActiveButton } = useActiveButton();

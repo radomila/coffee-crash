@@ -1,5 +1,5 @@
-import type { ActiveButtonType } from '../types.ts';
-import { useActiveButton } from '../hooks/useActiveButton.ts';
+import type { ActiveButtonType } from '../../types.ts';
+import { useActiveButton } from '../../hooks/useActiveButton.ts';
 import clsx from 'clsx';
 
 interface Props {
