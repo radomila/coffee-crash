@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# Coffee Crash 
+Coffee Crash is a simple responsive web application, which shows the listing of coffees. It is possible to show the listing of all products, or only the available ones.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology Stack 
 
-Currently, two official plugins are available:
+- ReactJS v19 + Vite
+- TypeScript 
+- Tailwind CSS v4
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+Project is structured into several directories and files, each serving a specific purpose:
 
-## Expanding the ESLint configuration
+- ```src``` - the main application code 
+  - ```UI components``` - reusable components, every component is in its own directory
+  - ```assets``` - static assets like images
+  - ```utils``` - utility functions
+  - ```theme.css``` - theme definition file for Tailwind CSS, containing variable definitions
+  - ```index.css``` - global styles file, where Tailwind CSS is imported
+  - ```hooks``` - custom hooks for managing state and fetching data
+  - ```context``` - context definitions for global state management
+  - ```providers``` - providers for context and other global configurations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Styling
+Modern design is provided by devChallenges.io, as the project is part of their challenges. The design is implemented using Tailwind CSS v4, which allows for rapid styling and responsiveness.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+File ```theme.css``` contains the theme definition, including colors and font sizes used throughout the application.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+````
+@import 'tailwindcss';
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+@theme {
+  --color-background-primary: #111315;
+  --color-background-secondary: #1b1d1f;
+  --color-text-primary: #fef7ee;
+  --color-text-secondary: #6f757c;
+  --color-button: #4d5562;
+  --color-vector: #302522;
+  --color-yellow-tag: #f6c768;
+  --color-green-tag: #bee3cc;
+  --color-sold-out: #ed735d;
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  --text-body: 1rem;
+  --text-label: 0.875rem;
+  --text-small-text: 0.625rem;
+  --text-price-tag: 0.75rem;
+}
+````
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Responsiveness
+Web application is fully responsive, ensuring a seamless user experience across various devices and screen sizes. It can be displayed on mobile phones, tablets, laptops and larger screens.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Running the Project
+To run the project locally, follow these steps:
+
+- Clone the repository ````git clone````
+- Install dependencies using ````npm install````
+- Run the dev server with ````npm run dev````
+- Open your browser and navigate to ````http://localhost:5173````
+
+## Possible Improvements
+Coffee Crash has a potential for further enhancements, including:
+- **Loading** when fetching data to enhance user experience
+- **Error handling** for API requests to manage potential issues gracefully
+
